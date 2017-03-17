@@ -1,4 +1,6 @@
-package com.yshpyluk.core.games;
+package com.yshpyluk.core.impls;
+
+import com.yshpyluk.core.Game;
 
 /**
  * Created by yshpyluk on 3/15/17.

@@ -2,17 +2,23 @@
         "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
         "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
-    <display-name>Archetype Created Web Application</display-name>
+<web-app
+        version="3.0"
+        xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+        <display-name>Archetype Created Web Application</display-name>
 
     <servlet>
         <servlet-name>helloWorld</servlet-name>
-        <servlet-class>com.yshpyluk.servlets.HelloWorld</servlet-class>
+        <servlet-class>com.yshpyluk.servlets.HelloWorldServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>games</servlet-name>
-        <servlet-class>com.yshpyluk.servlets.Games</servlet-class>
+        <servlet-class>com.yshpyluk.servlets.GamesServlet</servlet-class>
     </servlet>
+
     <servlet-mapping>
         <servlet-name>helloWorld</servlet-name>
         <url-pattern>/greetings</url-pattern>
@@ -21,4 +27,14 @@
         <servlet-name>games</servlet-name>
         <url-pattern>/games</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>games</servlet-name>
+        <url-pattern>/warcraft</url-pattern>
+        <url-pattern>/salutation</url-pattern>
+        <url-pattern>/wazzup</url-pattern>
+    </servlet-mapping>
+
+        <listener>
+        <listener-class>com.yshpyluk.servlets.RequestListener</listener-class>
+        </listener>
 </web-app>

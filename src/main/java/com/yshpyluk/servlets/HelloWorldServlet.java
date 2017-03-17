@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Created by yshpyluk on 3/15/17.
  */
-public class HelloWorld extends HttpServlet {
+public class HelloWorldServlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response)

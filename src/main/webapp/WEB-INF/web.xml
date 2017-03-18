@@ -47,4 +47,12 @@
         <filter-name>logger</filter-name>
         <url-pattern>/games</url-pattern>
     </filter-mapping>
+    <filter>
+        <filter-name>timeLogger</filter-name>
+        <filter-class>com.yshpyluk.filter.TimeCounterFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>timeLogger</filter-name>
+        <url-pattern>/games</url-pattern>
+    </filter-mapping>
 </web-app>

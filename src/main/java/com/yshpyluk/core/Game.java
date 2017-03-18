@@ -8,6 +8,7 @@ public interface Game {
 	String start();
 	String play();
 	String finish();
+
 	default String triggerGame(){
 		String gameProgress = initialize() + "\n" +
 						start() + "\n" +

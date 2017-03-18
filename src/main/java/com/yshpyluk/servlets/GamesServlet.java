@@ -4,11 +4,12 @@ import com.yshpyluk.core.Game;
 import com.yshpyluk.core.GameFactory;
 import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 /**
  * Created by yshpyluk on 3/15/17.
@@ -38,10 +39,16 @@ public class GamesServlet extends HttpServlet {
 
 		try {
 			Game game = GameFactory.getGame(gameType);
-			response.getWriter().println(game.triggerGame());
+			String result = game.triggerGame().replace("\n", "<br>");
+			request.setAttribute("triggerGame", result);
+			RequestDispatcher requestDispatcher = request.getRequestDispatcher("GameView.jsp");
+			requestDispatcher.forward(request, response);
+//			response.getWriter().println(game.triggerGame());
 		} catch (NotImplementedException e) {
 			response.getWriter().println(
 					String.format("Sorry but %1$s game is not supported", gameType));
+		} catch (ServletException e) {
+			e.printStackTrace();
 		}
 	}
 }

@@ -8,7 +8,7 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
 
-        <display-name>Archetype Created Web Application</display-name>
+    <display-name>Archetype Created Web Application</display-name>
 
     <servlet>
         <servlet-name>helloWorld</servlet-name>
@@ -34,7 +34,17 @@
         <url-pattern>/wazzup</url-pattern>
     </servlet-mapping>
 
-        <listener>
-        <listener-class>com.yshpyluk.servlets.RequestListener</listener-class>
-        </listener>
+    <listener>
+        <listener-class>com.yshpyluk.listener.RequestListener</listener-class>
+    </listener>
+
+
+    <filter>
+        <filter-name>logger</filter-name>
+        <filter-class>com.yshpyluk.filter.LoggerFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>logger</filter-name>
+        <url-pattern>/games</url-pattern>
+    </filter-mapping>
 </web-app>

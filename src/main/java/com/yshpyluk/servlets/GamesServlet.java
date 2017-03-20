@@ -18,13 +18,7 @@ public class GamesServlet extends HttpServlet {
 
 	@Override
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String gameType = null;
-
-		try {
-			gameType = request.getParameter("type");
-		} catch (NullPointerException e) {
-
-		}
+		String gameType = request.getParameter("type");
 
 		if (gameType == null) {
 			response.getWriter().println("Sorry :( \n" +
@@ -43,7 +37,6 @@ public class GamesServlet extends HttpServlet {
 			request.setAttribute("triggerGame", result);
 			RequestDispatcher requestDispatcher = request.getRequestDispatcher("GameView.jsp");
 			requestDispatcher.forward(request, response);
-//			response.getWriter().println(game.triggerGame());
 		} catch (NotImplementedException e) {
 			response.getWriter().println(
 					String.format("Sorry but %1$s game is not supported", gameType));

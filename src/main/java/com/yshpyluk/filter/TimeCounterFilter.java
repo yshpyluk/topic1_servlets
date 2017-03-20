@@ -17,8 +17,6 @@ public class TimeCounterFilter implements Filter {
 	public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
 		long before = System.currentTimeMillis();
 		HttpServletRequest request = (HttpServletRequest) servletRequest;
-		request.getRequestURI();
-		request.getQueryString();
 
 		filterChain.doFilter(servletRequest, servletResponse);
 

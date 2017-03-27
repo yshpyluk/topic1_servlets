@@ -21,14 +21,16 @@ public class GamesServlet extends HttpServlet {
 		String gameType = request.getParameter("type");
 
 		if (gameType == null) {
-			response.getWriter().println("Sorry :( \n" +
-					"You didn't provide any game type. \n" +
-					"Please use following URL parameter: type \n" +
-					"With following possible values: \n" +
-					"BLACKJACK\n" +
-					"BILLIARD\n" +
-					"WARCRAFT\n" +
-					"FOOTBALL");
+			response.getWriter().println(
+					new StringBuilder()
+							.append("Sorry :( \n")
+							.append("You didn't provide any game type. \n")
+							.append("Please use following URL parameter: type \n")
+							.append("With following possible values: \n")
+							.append("BLACKJACK\n")
+							.append("BILLIARD\n")
+							.append("WARCRAFT\n")
+							.append("FOOTBALL"));
 		}
 
 		try {
